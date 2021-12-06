@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EMI_Calc
+namespace EMICalc
 {
-    internal class EMI_Calc_Inputs
+    internal class EMICalcInputs
     {
         int  n,t;
         int PrincipalAmt;

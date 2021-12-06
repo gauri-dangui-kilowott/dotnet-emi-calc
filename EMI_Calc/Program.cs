@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace EMI_Calc
+namespace EMICalc
 {
     internal class Program
     {
@@ -18,7 +18,7 @@ namespace EMI_Calc
             Console.WriteLine("Enter the monthly compound :");
             n = Convert.ToInt32(Console.ReadLine());
 
-            var emiObject = new EMI_Calc_Inputs();
+            var emiObject = new EMICalcInputs();
             emiObject.GetPrincipal(PrincipalAmt);
             emiObject.GetRate(interest);
             emiObject.GetMonthlyCompound(n);
