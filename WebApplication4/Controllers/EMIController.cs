@@ -20,7 +20,7 @@ namespace EpiMVC.Controllers
             return View();
         }
 
-        public ActionResult CalculateMonthlyEMI(double principal, double rate, double duration)
+        public ActionResult DisplayEmi(double principal, double rate, double duration)
         {
             Request request = new Request();
             request.Principal = principal;
@@ -28,10 +28,15 @@ namespace EpiMVC.Controllers
             request.LoanDurationInYearCount = duration;
 
 
-            double Result = (double)request.Principal * System.Math.Pow(1 + (request.InterestRateInPercentage / 100) / 12, request.LoanDurationInYearCount * 12);
+            double MonthlyEmi = (double)request.Principal * System.Math.Pow(1 + (request.InterestRateInPercentage / 100) / 12, request.LoanDurationInYearCount * 12);
+            double e = 2.7183;
+            double ContinousEmi = (double)request.Principal * System.Math.Pow(e, (request.InterestRateInPercentage / 100 * request.LoanDurationInYearCount));
+            double DailyEmi = ((double)request.Principal * System.Math.Pow(1 + ((request.InterestRateInPercentage / 100) / 365), 365 * request.LoanDurationInYearCount)) - (double)request.Principal;
 
+            request.MonthlyEmi = MonthlyEmi;
+            request.ContinousEmi = ContinousEmi;
+            request.DailyEmi = DailyEmi;
 
-            request.Result = Result;
             return View(request);
 
         }

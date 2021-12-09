@@ -1,18 +1,22 @@
-﻿
+﻿@model EpiMVC.Models.Request
+
+@{
+    Layout = null;
+}
 
 <!DOCTYPE html>
 
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>CalculateMonthlyEMI</title>
+    <title>View</title>
 </head>
 <body>
     <div>
-        <h1>
-            Monthly EMI
-        </h1>
-        <h3>@Model.Result</h3>
+        <h1>Monthly EMI</h1>
+        <h4>Monthly Emi = @Model.MonthlyEmi</h4>
+        <h4>Daily Emi = @Model.DailyEmi</h4>
+        <h4>Continous Emi = @Model.ContinousEmi</h4>
     </div>
 </body>
 </html>

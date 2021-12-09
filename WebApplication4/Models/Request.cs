@@ -10,7 +10,9 @@ namespace EpiMVC.Models
         public double Principal { get; set; }
         public double InterestRateInPercentage { get; set; }
         public double LoanDurationInYearCount { get; set; }
-        public double Result { get; set; }
+        public double MonthlyEmi {  get; set; }
+        public double DailyEmi {  get; set; }
+        public double ContinousEmi {  get; set; }
 
 
     }
