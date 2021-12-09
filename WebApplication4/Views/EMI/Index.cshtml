@@ -1,0 +1,32 @@
+﻿@model EpiMVC.Models.Request
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>EmiInputs</title>
+</head>
+<body>
+    <form method="post" action="DisplayEmi">
+        <br />
+        <label>Principal Amount : </label>
+        <input type="text" name="principal">
+        <br> <br>
+        <label>Rate of Interest : </label>
+        <input type="text" name="rate">
+        <br> <br>
+        <label>Loan Duration : </label>
+        <input type="text" name="duration">
+        <br> <br>
+
+
+        <br><br>
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
